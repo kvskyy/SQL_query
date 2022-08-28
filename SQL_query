@@ -1,0 +1,33 @@
+Создание SQL-запроса:
+Существует две таблицы CategoryInsured (Id(ключевое поле), Code, Name) и CategoryInsuredNew (Id(ключевое поле), Code, Name)
+Напишите Select, который будет сравнивать данные в первой и во второй таблице и выводить строки, данные в которых не совпадают
+
+
+CREATE TABLE CategoryInsured(
+	id int auto_increment primary key,
+    сode varchar(10)
+    name varchar(10)
+);
+
+CREATE TABLE CategoryInsuredNew(
+	id int auto_increment primary key,
+    сode varchar(10)
+    name varchar(10)
+);
+
+INSERT INTO CategoryInsured(сode)
+VALUES('w1'),('w2'),('w3');
+
+INSERT INTO CategoryInsuredNew(сode,name)
+SELECT сode, 'insur'
+FROM CategoryInsured;
+
+SELECT id,name
+FROM (
+SELECT id, name FROM CategoryInsured
+UNION ALL
+SELECT id, name FROM CategoryInsuredNew
+) tbl
+GROUP BY id, name
+HAVING count(*) = 1
+ORDER BY id;
