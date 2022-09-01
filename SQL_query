@@ -1,8 +1,8 @@
-Создание SQL-запроса:
-Существует две таблицы CategoryInsured (Id(ключевое поле), Code, Name) и CategoryInsuredNew (Id(ключевое поле), Code, Name)
-Напишите Select, который будет сравнивать данные в первой и во второй таблице и выводить строки, данные в которых не совпадают
+Preconditions:
+Есть две таблицы CategoryInsured (Id(ключевое поле), Code, Name) и CategoryInsuredNew (Id(ключевое поле), Code, Name)
+Необходимо написать Select, который будет сравнивать данные в первой и во второй таблице и выводить строки, данные в которых не совпадают.
 
-
+Query:
 CREATE TABLE CategoryInsured(
 	id int auto_increment primary key,
     сode varchar(10)
