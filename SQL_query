@@ -5,13 +5,13 @@ Preconditions:
 Query:
 CREATE TABLE CategoryInsured(
 	id int auto_increment primary key,
-    сode varchar(10)
+    сode varchar(10),
     name varchar(10)
 );
 
 CREATE TABLE CategoryInsuredNew(
 	id int auto_increment primary key,
-    сode varchar(10)
+    сode varchar(10),
     name varchar(10)
 );
 
